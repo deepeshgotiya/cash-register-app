@@ -1,0 +1,13 @@
+.notes-table{
+    width: 50%;
+    text-align: justify;
+    border-collapse: collapse;
+    margin: auto;
+}
+.inputDiv{
+    display: block;
+    margin: auto;
+}
+#errorMsg{
+    display: block;
+}
