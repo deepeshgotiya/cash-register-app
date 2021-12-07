@@ -5,18 +5,24 @@ const errorBox = document.querySelector("#errorMsg")
 const numOfNotes = document.querySelectorAll(".no-of-notes")
 const availableNotes = [2000,500,100,20,10,5,1]
 
+// let billAmountValue = Number(billAmount.value)
+// let givenCashValue =Number(givenCash.value)
+
 function validateAmount(){
-    if(billAmount.value>0){
-        if(givenCash.value>=billAmount.value){
-            const returnAmount = givenCash.value-billAmount.value;
-            calculateChange(returnAmount);
+    let billAmountValue = Number(billAmount.value)
+    let givenCashValue =Number(givenCash.value)
+    if(billAmountValue <= givenCashValue){
+        const returnAmount = givenCashValue - billAmountValue;
+        if(returnAmount == 0){
+            errorBox.innerText = "No Amount to return"
         }else{
-            errorBox.innerText="Given cash should be equal or grater than tha bill amount ";
+            errorBox.innerText = returnAmount;
+            calculateChange(returnAmount)
         }
     }else{
-        errorBox.innerText="invalid Input";
+        errorBox.innerText = "Given Amount should be greater or equal to Bill Amount"
     }
-}
+    }
 function calculateChange (returnAmount){
         for (let i = 0; i < availableNotes.length; i++) {
           const numberOfNotes = Math.trunc(returnAmount / availableNotes[i]);
