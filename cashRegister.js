@@ -21,7 +21,7 @@ function validateAmount(){
                 calculateChange(returnAmount)
             }
         }
-    }else if(billAmountValue < 0 && givenCashValue < 0){
+    }else if(billAmountValue < 0 || givenCashValue < 0){
         errorBox.innerText = "Invalid Input"
     }}
     // if(billAmountValue <= givenCashValue){
