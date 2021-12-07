@@ -22,7 +22,7 @@ function validateAmount(){
             }
         }
     }else if(billAmountValue < 0 && givenCashValue < 0){
-        errorBox.innerText = "Given Amount should be greater or equal to Bill Amount"
+        errorBox.innerText = "Invalid Input"
     }}
     // if(billAmountValue <= givenCashValue){
     //     const returnAmount = givenCashValue - billAmountValue;
